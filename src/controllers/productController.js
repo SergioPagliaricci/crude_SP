@@ -38,6 +38,7 @@ const productController = {
         });
         editProductsJSON = JSON.stringify(editProducts);
         fs.writeFileSync(__dirname + '/../data/products.json', editProductsJSON);
+        products = editProducts;
         res.redirect('/products/list');
     },
     destroy: function(req, res, next) {
@@ -55,6 +56,7 @@ const productController = {
             });
             productsDestroyJSON = JSON.stringify(productDestroy);
             fs.writeFileSync(__dirname + '/../data/products.json', productsDestroyJSON);
+            products = productDestroy;
             res.redirect('/products/list');
         } else {
             res.send('Producto invalido');

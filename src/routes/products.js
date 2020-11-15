@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const productController = require('../controllers/producController');
+const productController = require('../controllers/productController');
 
 /* mostrar formulario crear producto */
 router.get('/create', productController.create);
